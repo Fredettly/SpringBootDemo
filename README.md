@@ -8,3 +8,16 @@
 [thymeleaf](http://www.thymeleaf.org)
 
 [h2](https://mvnrepository.com/search?q=h2)
+
+## 脚本
+
+```sql
+CREATE CACHED TABLE "PUBLIC"."USER"(
+    "ID" INT DEFAULT NEXT VALUE FOR NOT NULL NULL_TO_DEFAULT SEQUENCE 
+    "ACCOUNT_ID" VARCHAR(100),
+    "NAME" VARCHAR(50),
+    "TOKEN" CHAR(36),
+    "GMT_CREATE" BIGINT,
+    "GMT_MODIFIED" BIGINT
+```
+
