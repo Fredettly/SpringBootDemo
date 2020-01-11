@@ -9,6 +9,8 @@
 
 [h2](https://mvnrepository.com/search?q=h2)
 
+[flyway](https://flywaydb.org/getstarted/firststeps/maven)
+
 ## 脚本
 
 ```sql
@@ -20,4 +22,6 @@ CREATE CACHED TABLE "PUBLIC"."USER"(
     "GMT_CREATE" BIGINT,
     "GMT_MODIFIED" BIGINT
 ```
-
+```bash
+mvn flyway:migrate
+```
