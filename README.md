@@ -11,6 +11,7 @@
 
 [flyway](https://flywaydb.org/getstarted/firststeps/maven)
 
+[Lombok](https://avatars3.githubusercontent.com/u/51558201?v=4)
 ## 脚本
 
 ```sql
