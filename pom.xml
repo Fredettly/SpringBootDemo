@@ -83,11 +83,6 @@
                         <artifactId>h2</artifactId>
                         <version>1.4.200</version>
                     </dependency>
-                    <dependency>
-                        <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok-maven-plugin</artifactId>
-                        <version>1.18.10.0</version>
-                    </dependency>
                 </dependencies>
             </plugin>
         </plugins>

@@ -2,9 +2,7 @@ package com.fredettly.demo.controller;
 
 
 import com.fredettly.demo.dto.QuestionDTO;
-import com.fredettly.demo.mapper.QuestionMapper;
 import com.fredettly.demo.mapper.UserMapper;
-import com.fredettly.demo.model.Question;
 import com.fredettly.demo.model.User;
 import com.fredettly.demo.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
