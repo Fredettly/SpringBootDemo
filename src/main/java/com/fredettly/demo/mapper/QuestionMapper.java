@@ -1,14 +1,21 @@
 package com.fredettly.demo.mapper;
 
+import com.fredettly.demo.dto.QuestionDTO;
 import com.fredettly.demo.model.Question;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * Created by xwx_ on 2020/1/13
  */
 @Mapper
 public interface QuestionMapper {
-    @Insert("insert into Question(title,description,gmt_create,gmt_modified,creator,tag)values(#{title},#{description},#{gmtCreate},#{gmtModified},#{Creator},#{tag})")
+    @Insert("insert into question(title,description,gmt_create,gmt_modified,creator,tag)values(#{title},#{description},#{gmtCreate},#{gmtModified},#{Creator},#{tag})")
     void create(Question question);
+
+    @Select("select * from question")
+    List<Question> list();
 }
