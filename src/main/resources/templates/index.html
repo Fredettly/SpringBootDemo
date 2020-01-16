@@ -72,13 +72,18 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
 <div th:if="${session.user != null}">
-    <p th:text="'Hello, ' + ${session.user.getName()} + '!'"/>
+    <div class="jumbotron">
+        <h1 th:text="'Hello, ' + ${session.user.getName()} + '!'"></h1>
+        <p>点击发起你的问题</p>
+        <p><a class="btn btn-primary btn-lg" href="/publish" role="button">发布问题</a></p>
+    </div>
 </div>
 <div class="contrainer-fluid main">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h2><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 发现</h2>
+            <h2><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&#8194;发现</h2>
             <hr>
             <div class="media" th:each="question : ${questions}">
                 <div class="media-left">
@@ -96,7 +101,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <h3>热门</h3>
+            <h3>热门话题</h3>
         </div>
     </div>
 </div>
