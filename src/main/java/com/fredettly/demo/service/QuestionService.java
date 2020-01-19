@@ -35,4 +35,19 @@ public class QuestionService {
         }
         return questionDTOList;
     }
+
+    public List<QuestionDTO> listById(Integer userId) {
+        List<Question> questions = questionMapper.listById(userId);
+        List<QuestionDTO> questionDTOList = new ArrayList<>();
+        for (Question question : questions) {
+            User user = userMapper.findById(question.getCreator());
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(question, questionDTO);
+            questionDTO.setUser(user);
+            questionDTOList.add(questionDTO);
+        }
+        return questionDTOList;
+
+
+    }
 }
