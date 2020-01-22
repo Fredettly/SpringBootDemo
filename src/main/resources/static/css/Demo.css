@@ -16,6 +16,10 @@ body{
 .media-object{
     width: 43px;
 }
+a:focus, a:hover {
+    color: gray;
+    text-decoration: unset;
+}
 .text-desc{
     font-size:12px;
     font-weight: normal;
