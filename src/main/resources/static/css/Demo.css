@@ -32,3 +32,6 @@ a:focus, a:hover {
 .section{
     margin-top: 15px;
 }
+.btn-question{
+    float: right;
+}
