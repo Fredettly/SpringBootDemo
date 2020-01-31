@@ -31,7 +31,7 @@ public class QuestionController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable(name = "id") Integer id
     ) {
-        questionMapper.delete(id);
+        questionMapper.deleteByPrimaryKey(id);
         return "redirect:/";
     }
 }
