@@ -25,4 +25,5 @@ CREATE CACHED TABLE "PUBLIC"."USER"(
 ```
 ```bash
 mvn flyway:migrate
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
