@@ -3,6 +3,7 @@ package com.fredettly.demo.service;
 import  com.fredettly.demo.dto.QuestionDTO;
 import com.fredettly.demo.exception.CustomizeErrorCode;
 import com.fredettly.demo.exception.CustomizeException;
+import com.fredettly.demo.mapper.QuestionExtMapper;
 import com.fredettly.demo.mapper.QuestionMapper;
 import com.fredettly.demo.mapper.UserMapper;
 import com.fredettly.demo.model.Question;
@@ -25,6 +26,8 @@ public class QuestionService {
     private QuestionMapper questionMapper;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
 
     public List<QuestionDTO> list() {
         List<Question> questions = questionMapper.selectByExample(new QuestionExample());
@@ -90,5 +93,12 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    public void incView(Integer id) {
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtMapper.incView(question);
     }
 }
