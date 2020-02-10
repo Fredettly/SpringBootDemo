@@ -4,7 +4,7 @@
     parent_id bigint NOT NULL,
     content varchar(1024) NOT NULL,
     type int NOT NULL,
-    commentator int NOT NULL,
+    commentator bigint NOT NULL,
     gmt_create bigint NOT NULL,
     gmt_modified bigint NOT NULL,
     like_count bigint DEFAULT 0
