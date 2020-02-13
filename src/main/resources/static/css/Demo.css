@@ -16,6 +16,9 @@ body{
 .media-object{
     width: 43px;
 }
+.media-body{
+    padding-top: 10px;
+}
 a:focus, a:hover {
     color: gray;
     text-decoration: unset;
@@ -34,4 +37,7 @@ a:focus, a:hover {
 }
 .btn-question{
     float: right;
+}
+.comment{
+    margin: 15px 0;
 }
