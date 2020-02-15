@@ -1,6 +1,6 @@
 package com.fredettly.demo.service;
 
-import  com.fredettly.demo.dto.QuestionDTO;
+import com.fredettly.demo.dto.QuestionDTO;
 import com.fredettly.demo.exception.CustomizeErrorCode;
 import com.fredettly.demo.exception.CustomizeException;
 import com.fredettly.demo.mapper.QuestionExtMapper;
@@ -62,7 +62,7 @@ public class QuestionService {
 
     public QuestionDTO getById(Long id) {
         Question question = questionMapper.selectByPrimaryKey(id);
-        if (question == null){
+        if (question == null) {
             throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }
         QuestionDTO questionDTO = new QuestionDTO();
@@ -92,7 +92,7 @@ public class QuestionService {
             example.createCriteria()
                     .andIdEqualTo(question.getId());
             int updated = questionMapper.updateByExampleSelective(updateQuestion, example);
-            if (updated != 1){
+            if (updated != 1) {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
