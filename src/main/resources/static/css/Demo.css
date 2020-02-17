@@ -9,7 +9,7 @@ body {
 
 .btn-publish {
     float: right;
-    margin-bottom: 15px;
+    margin: 10px 0;
 }
 
 .row {
@@ -24,7 +24,6 @@ body {
 .media-object {
     width: 43px;
 }
-
 
 .text-desc {
     font-size: 12px;
@@ -45,10 +44,9 @@ body {
     float: right;
 }
 
-.comment {
-    margin: 15px 0;
+.form-control{
+    margin-top: 10px;
 }
-
 .glyphicon-pencil {
     margin-top: -5px;
     float: right;
@@ -79,6 +77,18 @@ a:focus, a:hover {
     color: steelblue;
     text-decoration: unset;
 }
-.info{
+
+.info {
     float: right;
+}
+
+.info .active {
+    color: steelblue;
+}
+
+.comment .collapse {
+    border: 1px solid #eee;
+    margin: 12px;
+    padding: 13px;
+    border-radius: 10px;
 }

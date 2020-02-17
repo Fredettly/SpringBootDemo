@@ -2,8 +2,8 @@ package com.fredettly.demo.controller;
 
 import com.fredettly.demo.dto.CommentDTO;
 import com.fredettly.demo.dto.QuestionDTO;
+import com.fredettly.demo.enums.CommentTypeEnum;
 import com.fredettly.demo.mapper.QuestionMapper;
-import com.fredettly.demo.model.Question;
 import com.fredettly.demo.service.CommentService;
 import com.fredettly.demo.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class QuestionController {
                            Model model) {
         QuestionDTO questionDTO = questionService.getById(id);
 
-        List<CommentDTO> comments = commentService.listByQuestion(id);
+        List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
 
         questionService.incView(id);
         model.addAttribute("question", questionDTO);
