@@ -44,7 +44,7 @@ body {
     float: right;
 }
 
-.form-control{
+.form-control.comment{
     margin-top: 10px;
 }
 .glyphicon-pencil {
@@ -91,4 +91,15 @@ a:focus, a:hover {
     margin: 12px;
     padding: 13px;
     border-radius: 10px;
+}
+.question-tag{
+    margin-right: 5px;
+    font-size: 15px;
+}
+.xp{
+    border: 0;
+}
+.related{
+    list-style: none;
+    padding-left: 0;
 }

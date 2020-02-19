@@ -26,13 +26,20 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <!--问题内容-->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}"></div>
-                <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
-                <!--<a th:if="${session.user != null && session.user.id == question.creator}">-->
-                <!--<button class="btn btn-danger btn-question">删除</button>-->
-                <!--</a>-->
-                <!--</div>-->
+                <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sp">
+
+                <!--标签-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <span class="label label-info question-tag" th:each="tag : ${question.tag.split(',')}">
+                        <span class="glyphicon glyphicon-tag"></span>
+                        <span class="label label-info " th:text="${tag}"></span>
+                    </span>
+                </div>
+                <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12 xp">
+                <!--编辑删除-->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <a class="question" th:href="@{'/delete/'+${question.id}}"
                        th:if="${session.user != null && session.user.id == question.creator}">
@@ -104,7 +111,8 @@
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                        <input type="text" class="form-control" placeholder="评论一下...." th:id="${'input-'+comment.id}">
+                        <input type="text" class="form-control comment" placeholder="评论一下...."
+                               th:id="${'input-'+comment.id}">
                         <button type="button" class="btn btn-success btn-publish" onclick="comment(this)"
                                 th:data-id="${comment.id}">回复
                         </button>
@@ -128,8 +136,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                 <h4>相关问题</h4>
+                <ul class="related">
+                    <li th:each="related : ${relatedQuestions}">
+                        <a th:href="@{'/question/'+ ${related.id}}" th:text="${related.title}"></a>
+                    </li>
+                </ulrelated>
             </div>
         </div>
     </div>
