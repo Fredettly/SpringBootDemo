@@ -36,14 +36,14 @@ public class ProfileController {
         if ("questions".equals(action)) {
             model.addAttribute("section", "questions");
             model.addAttribute("sectionName", "我的提问");
+            List<QuestionDTO> questionDTOList = questionService.listById(user.getId());
+            model.addAttribute("questions", questionDTOList);
         } else if ("replies".equals(action)) {
             List<NotificationDTO> notificationDTOList = notificationService.list(user.getId());
             model.addAttribute("section", "replies");
             model.addAttribute("notification", notificationDTOList);
             model.addAttribute("sectionName", "最新回复");
         }
-        List<QuestionDTO> questionDTOList = questionService.listById(user.getId());
-        model.addAttribute("questions", questionDTOList);
         return "profile";
     }
 }

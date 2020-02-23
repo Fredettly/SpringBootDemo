@@ -29,6 +29,7 @@ public class NotificationService {
         NotificationExample example = new NotificationExample();
         example.createCriteria()
                 .andReceiverEqualTo(userId);
+        example.setOrderByClause("gmt_create desc");
         List<Notification> notifications = notificationMapper.selectByExample(example);
 
         List<NotificationDTO> notificationDTOS = new ArrayList<>();
@@ -39,9 +40,14 @@ public class NotificationService {
             notificationDTO.setType(NotificationTypeEnum.nameOfType(notification.getType()));
             notificationDTOS.add(notificationDTO);
         }
-
-
         return notificationDTOS;
+    }
+
+    public Long unreadCount(Long userId) {
+        NotificationExample notificationExample = new NotificationExample();
+        notificationExample.createCriteria()
+                .andReceiverEqualTo(userId);
+        return notificationMapper.countByExample(notificationExample);
     }
 }
 

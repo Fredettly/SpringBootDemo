@@ -46,6 +46,9 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown" th:if="${session.user != null}">
+                        <a href="/profile/replies"><span class="glyphicon glyphicon-envelope"></span></a>
+                    </li>
+                    <li class="dropdown" th:if="${session.user != null}">
                         <a href="/publish" th:text="发布"></a>
                     </li>
                     <li class="dropdown" th:if="${session.user != null}">
