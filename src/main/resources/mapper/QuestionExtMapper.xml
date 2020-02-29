@@ -28,4 +28,14 @@
         select * from QUESTION where id != #{id} and tag regexp #{tag}
     </select>
 
+    <select id="selectBySearch" parameterType="com.fredettly.demo.dto.QuestionQueryDTO" resultMap="BaseResultMap">
+        select * from QUESTION
+        <where>
+            <if test="search != null">
+                and title regexp #{search}
+            </if>
+        </where>
+        order BY gmt_create desc
+    </select>
+
 </mapper>

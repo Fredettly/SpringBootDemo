@@ -1,6 +1,7 @@
 package com.fredettly.demo.service;
 
 import com.fredettly.demo.dto.QuestionDTO;
+import com.fredettly.demo.dto.QuestionQueryDTO;
 import com.fredettly.demo.exception.CustomizeErrorCode;
 import com.fredettly.demo.exception.CustomizeException;
 import com.fredettly.demo.mapper.QuestionExtMapper;
@@ -32,10 +33,19 @@ public class QuestionService {
     @Autowired
     private QuestionExtMapper questionExtMapper;
 
-    public List<QuestionDTO> list() {
+    public List<QuestionDTO> list(String search) {
+
+        if (StringUtils.isNotBlank(search)) {
+            String[] tags = StringUtils.split(search, " ");
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+        }
+
+
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questions = questionMapper.selectByExample(questionExample);
+        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         for (Question question : questions) {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -114,7 +124,7 @@ public class QuestionService {
         if (StringUtils.isBlank(queryDTO.getTag())) {
             return new ArrayList<>();
         }
-        String[] tags = StringUtils.split(queryDTO.getTag(), ",");
+        String[] tags = StringUtils.split(queryDTO.getTag(), " ");
         String regexpTag = Arrays.stream(tags).collect(Collectors.joining("|"));
         Question question = new Question();
         question.setId(queryDTO.getId());
