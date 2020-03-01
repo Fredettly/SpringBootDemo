@@ -36,8 +36,8 @@ public class QuestionService {
     public List<QuestionDTO> list(String search) {
 
         if (StringUtils.isNotBlank(search)) {
-            String[] tags = StringUtils.split(search, " ");
-            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+            String[] searchs = StringUtils.split(search, " ");
+            search = Arrays.stream(searchs).collect(Collectors.joining("|"));
         }
 
 

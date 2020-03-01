@@ -128,3 +128,8 @@ a:focus, a:hover {
     z-index: 30;
     background-color: #FA5A57;
 }
+
+.footer {
+    padding: 40px 25%;
+    color: #666;
+}
