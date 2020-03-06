@@ -133,3 +133,8 @@ a:focus, a:hover {
     padding: 40px 25%;
     color: #666;
 }
+.videos {
+    height: 600px;
+    width: 80%;
+    padding-left: 50px;
+}

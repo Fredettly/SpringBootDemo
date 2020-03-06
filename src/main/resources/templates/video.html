@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>学习视频</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/Demo.css">
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a th:href="@{/videos(page=1,aid=93549488)}"><img src="/img/video_1.jpg" alt=""></a>
+            <div class="caption">
+                <h3>【搞笑口技】用嘴模仿掘地求升的声音，沙雕游戏玩个锤子~</h3>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                                                                                   role="button">Button</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a th:href="@{/videos(page=1,aid=93040572)}"><img src="/img/video_2.jpg" alt=""></a>
+            <div class="caption">
+                <h3>故事要从几包吸水弹说起。。。</h3>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                                                                                   role="button">Button</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a th:href="@{/videos(page=1,aid=92901768)}"><img src="/img/video_3.jpg" alt=""></a>
+            <div class="caption">
+                <h3>“假如我年少有为 不自卑”</h3>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                                                                                   role="button">Button</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{footer :: foot}">
+</div>
+</body>
+
+</html>

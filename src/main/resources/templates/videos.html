@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>学习视频</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/Demo.css">
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+<div class="row">
+    <iframe class="videos"  th:src="@{//player.bilibili.com/player.html(aid=${aid},page=${page})}" scrolling="no" border="0"
+            frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+</div>
+<div th:insert="~{footer :: foot}">
+</div>
+</body>
+
+</html>

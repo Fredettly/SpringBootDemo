@@ -45,6 +45,9 @@
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="/video" th:text="学习视频"></a>
+                    </li>
                     <li class="dropdown" th:if="${session.user != null}">
                         <a href="/profile/replies"><span class="glyphicon glyphicon-envelope"></span></a>
                     </li>
